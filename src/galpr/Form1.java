@@ -1,5 +1,7 @@
 package galpr;
 
+import galpr.rasterization.DDA;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -37,11 +39,20 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
      */
     public void G_draw() {
         graphic.clear();
+
+        DDA dda = new DDA();
+        //dda.render(0, 100, 100, 100,G_Color.G_cBlack, graphic );
+        //dda.render(100, 100, 0, 100,G_Color.G_cBlack, graphic );
+
+        dda.render(100, 100, 0, 100, G_Color.G_cBlack, graphic  );
+        dda.render(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
+
+
         //graphic.putPixel(100, 100, G_Color.G_cBlack);
 
-        graphic.horizontalLine(0, 100, 100, 100, G_Color.G_cBlack );
+        //graphic.horizontalLine(0, 100, 100, 100, G_Color.G_cBlack );
 
-        graphic.verticalLine(100, 100, 0, 100, G_Color.G_cBlack );
+        //graphic.verticalLine(100, 100, 0, 100, G_Color.G_cBlack );
 
         //graphic.DDA(100, 100, 0, 100, G_Color.G_cBlack);
 
