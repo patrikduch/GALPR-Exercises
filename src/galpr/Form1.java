@@ -44,8 +44,22 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         //dda.render(0, 100, 100, 100,G_Color.G_cBlack, graphic );
         //dda.render(100, 100, 0, 100,G_Color.G_cBlack, graphic );
 
-        dda.render(100, 100, 0, 100, G_Color.G_cBlack, graphic  );
-        dda.render(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
+        //dda.render(100, 100, 0, 100, G_Color.G_cBlack, graphic  );
+        //dda.render(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
+
+        //dda.render(10, 30, 10, 100, G_Color.G_cBlack, graphic  );
+
+
+
+        //dda.renderline(100, 100, 0, 100, G_Color.G_cBlack, graphic  );
+        //dda.renderline(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
+        dda.renderline(10, 100, 10, 30, G_Color.G_cBlack, graphic  );
+
+
+
+
+        //dda.render(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
+
 
 
         //graphic.putPixel(100, 100, G_Color.G_cBlack);
