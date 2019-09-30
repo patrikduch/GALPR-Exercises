@@ -40,6 +40,64 @@ public class G_Graphics {
         bitmap.setRGB(x, y, color_help.getRGB());
     }
 
+    public void horizontalLine(int x1, int x2, int y1, int y2, G_Color color ) {
+
+        //putPixel(x1, y1, color);
+        for(int i = x1; i<= x2; i++) {
+
+            putPixel(i, y1, color);
+        }
+    }
+
+    public void verticalLine(int x1, int x2, int y1, int y2, G_Color color ) {
+
+        //putPixel(x1, y1, color);
+        for(int i = y1; i<= y2; i++) {
+
+            putPixel(x1, i, color);
+        }
+    }
+
+
+    public void DDA(int x1, int x2, int y1, int y2, G_Color color ) {
+
+        //putPixel(x1, y1, color);
+        //for(int i = y1; i<= y2; i++) {
+
+        //putPixel(x1, i, color);
+        //}
+
+        int dx = x2-x1;
+        int dy = y2-y1;
+
+        if(dx == 0) {
+
+            verticalLine(x1, x2, y1, y2,color);
+
+        } else if (dy == 0) {
+
+            horizontalLine(x1, x2, y1, y2, color);
+        }
+
+        double a =  dy / dx;
+
+        //Math.abs(a)
+
+
+
+
+        //for(int i = x1; i<= x2; i++) {
+
+
+
+        //}
+
+
+
+
+
+    }
+
     /**
      * Vrací barvu pixelu na dané pozici.
      *

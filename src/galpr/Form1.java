@@ -37,7 +37,15 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
      */
     public void G_draw() {
         graphic.clear();
-        graphic.putPixel(100, 100, G_Color.G_cBlack);
+        //graphic.putPixel(100, 100, G_Color.G_cBlack);
+
+        graphic.horizontalLine(0, 100, 100, 100, G_Color.G_cBlack );
+
+        graphic.verticalLine(100, 100, 0, 100, G_Color.G_cBlack );
+
+        //graphic.DDA(100, 100, 0, 100, G_Color.G_cBlack);
+
+
     }
 
     /**
@@ -104,7 +112,7 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         canvas = new MyCanvas(image);
         canvas.setPreferredSize(new Dimension(this.getSize().width, this.getSize().height));
 
-        // content		
+        // content
         getContentPane().add(canvas, java.awt.BorderLayout.CENTER);
 
         // mouse listener
