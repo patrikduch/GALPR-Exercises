@@ -1,2 +1,28 @@
 DDA algorithm
 https://tomasjanecek.cz/en/clanky/post/trivial-dda-and-bresenham-algorithm-for-a-line-in-java
+
+
+
+Dobrý den,
+včera jsme dodělali algoritmus DDA, tj. doplnit else větev v podmínce
+kde kontrolujeme zda-li je směrnice v intervalu [-1; +1].
+Dále jsme přidali novou třídu pro "čtverec". Je to třída, která má dvě
+třídní proměnné typu 2D int pole. První pole v sobě udržuje
+informace o vrcholech čtverce v řádcích jsou x a y souřadnice vrcholů a
+v sloupcích body:
+[x0, x1, ..., xn]
+[y0, y1, ..., yn]
+
+Druhé pole v sobě obsahuje informace o hranách. Každý řádek obsahuje
+počáteční a koncový bod a to ve formě indexu, který odkazuje do
+pole prvního, kde jsou samotné body uloženy:
+[0, 1] - nultá hrana mezi nultým a prvním vrcholem
+[1, 2]
+[2, 3]
+[3, 0]
+
+Poslední úkol bylo přidání rasterizační metody v třídě čtverec, která
+prochází hrany a jednu po druhé vykresluje pomocí algoritmu DDA:
+
+S pozdravem,
+Vojtěch molek
