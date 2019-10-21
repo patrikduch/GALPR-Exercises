@@ -10,11 +10,13 @@ public class DDA {
         double dy = y2-y1;
 
         if(dx == 0) {
+             // yz< yk
             graphics.verticalLine(x1,x2, y1, y2, color);
             return;
         }
 
         if(dy == 0) {
+            // xz< xk
             graphics.horizontalLine(x1, x2, y1, y2, color);
             return;
         }
@@ -51,10 +53,28 @@ public class DDA {
 
         } else { // Prohodit x za y  (přepočitat po každé v cyklu směrnici)
 
+            if (y2 < y1) {
+                int tmp = x2;
+                x2 = x1;
+                x1 = tmp;
+
+                tmp = y2;
+                y2 = y1;
+                y1 = tmp;
+            }
+
+            double k = (double) dx / dy;
+            int cele_x;
+            double x = (double) x1;
+            for (int y = y1; y <= y2; y++) {
+                cele_x = (int) Math.round(x);
+                graphics.putPixel(cele_x, y, color);
+                x += k;
+
+            }
 
         }
 
-        //System.out.println(a);
 
     }
 
@@ -82,13 +102,7 @@ public class DDA {
 
         double a =  dy / dx;
 
-        System.out.println(a);
-
-
-
-
-
-
+        //System.out.println(a);
 
         if (Math.abs(y2 - y1) <= Math.abs(x2 - x1)) {
 
