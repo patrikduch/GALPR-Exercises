@@ -52,14 +52,6 @@ public class Square {
 
         DDA dda = new DDA();
 
-        //dda.renderline(4, 100, 0, 0, G_Color.G_cBlack, graphics);
-        //dda.renderline(0,0, 0, 100, G_Color.G_cBlack, graphics);
-        //dda.renderline(100,100, 0, 100, G_Color.G_cBlack, graphics);
-        //dda.renderline(4, 100, 100, 100,G_Color.G_cBlack, graphics);
-
-        List<Integer> xlist = new ArrayList<>();
-        List<Integer> xVertices = new ArrayList<>();
-
         var counterX = 0;
         var counterY = 0;
 
@@ -68,33 +60,47 @@ public class Square {
 
         // Get first two indexes
         for (int i = 0; i < 4; i++) {
+
             for(int j = 0; j<2; j++) {
 
-                if(j%2 == 0 && counterX < 2) {
-                    //System.out.println(vertices[i][j]);
-                    xArray[counterX] = vertices[i][j];
-                    counterX++;
+                //System.out.println(edges[i][j]);
 
+                var x1 =edges[i][j];
+
+                //System.out.println(x1);
+
+                if(j%2 == 0 && counterX < 2) {
+                    //System.out.println(vertices[x1][j]);
+
+                    xArray[counterX] = vertices[x1][j];
+                    counterX++;
                 }
 
-                if(j%2 == 1 && counterY < 2) {
-                    //System.out.println(vertices[i][j]);
-                    yArray[counterY] = vertices[i][j];
+                if(j%2 ==1 && counterY <2) {
+                    System.out.println(vertices[x1][j]);
+
+                    // Assign y values
+                    yArray[counterY] = vertices[x1][j];
+
                     counterY++;
                 }
 
-                if (counterX == 2 && counterY == 2) {
-
-                    dda.renderline(xArray[0], xArray[1], yArray[0], yArray[1], G_Color.G_cBlack, graphics);
-                }
-
-
-
-
                 if(counterX == 2 && counterY == 2) {
-                    counterY = 0;
                     counterX = 0;
+                    counterY = 0;
                 }
+
+
+
+
+                dda.renderline(xArray[0], xArray[1], yArray[0], yArray[1], G_Color.G_cBlack, graphics);
+
+
+
+
+
+
+
 
             }
         }
