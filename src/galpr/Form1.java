@@ -1,6 +1,8 @@
 package galpr;
 
 import galpr.rasterization.DDA;
+import galpr.rasterization.Square;
+import galpr.transformations.GUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +11,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+
+import static galpr.G_Color.G_cBlack;
 
 /**
  * Třída reprezentující okno.
@@ -40,35 +44,47 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
     public void G_draw() {
         graphic.clear();
 
+
         DDA dda = new DDA();
-        //dda.render(0, 100, 100, 100,G_Color.G_cBlack, graphic );
-        //dda.render(100, 100, 0, 100,G_Color.G_cBlack, graphic );
-
-        //dda.render(100, 100, 0, 100, G_Color.G_cBlack, graphic  );
-        //dda.render(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
-
-        //dda.render(10, 30, 10, 100, G_Color.G_cBlack, graphic  );
+        Square square = new Square();
 
 
-
-        //dda.renderline(100, 100, 0, 100, G_Color.G_cBlack, graphic  );
-        //dda.renderline(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
-        dda.renderline(10, 100, 10, 30, G_Color.G_cBlack, graphic  );
+        //dda.renderline(350, 190, 250, 290, G_cBlack, graphic);
 
 
 
 
-        //dda.render(50, 150, 50, 50, G_Color.G_cBlack, graphic  );
+        int[] xVertices = new int[]{4,100,4,100};
+        int[] yVertices = new int[] {0, 0, 40, 40};
 
 
 
-        //graphic.putPixel(100, 100, G_Color.G_cBlack);
+        square.setVertices(xVertices, yVertices);
+        square.setEdges();
 
-        //graphic.horizontalLine(0, 100, 100, 100, G_Color.G_cBlack );
 
-        //graphic.verticalLine(100, 100, 0, 100, G_Color.G_cBlack );
+        square.rasterize(G_cBlack, graphic);
 
-        //graphic.DDA(100, 100, 0, 100, G_Color.G_cBlack);
+
+        /*
+
+        double mat[][] = { { 1.4, 2.4, 3.6},
+                { 5.2, 6.3, 7.4},
+                { 9.6, 10.3, 11.5 } };
+
+        double mat2[][] = { { 1.4, 2.4, 3.6 },
+                { 5.2, 6.3, 7.4},
+                { 9.6, 10.3, 11.5  } };
+       */
+
+        //GUtils.isMatrixsEqual(mat, mat2);
+        //double a[][]={{1.2,1.4,1.8},{2.4,2.8,2.3},{3.2,3.4,3.3}};
+        //double b[][]={{1.7,1.4,1.6},{2.5,2.5,2.5},{3.7,3.7,3.7}};
+
+        //var resultMatrix = GUtils.matrixMultiplication(a,b);
+
+
+
 
 
     }

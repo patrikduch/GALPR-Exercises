@@ -1,4 +1,4 @@
-package galpr;
+package galpr.transformations;
 
 public class GUtils {
     static double mat[][] = { { 1.4, 2.4, 3.6, 4.7 },
