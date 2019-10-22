@@ -11,13 +11,13 @@ public class DDA {
 
         if(dx == 0) {
              // yz< yk
-            graphics.verticalLine(x1,x2, y1, y2, color);
+            graphics.verticalLine(x1,x2, y1, y2);
             return;
         }
 
         if(dy == 0) {
             // xz< xk
-            graphics.horizontalLine(x1, x2, y1, y2, color);
+            graphics.horizontalLine(x1, x2, y1, y2);
             return;
         }
 
@@ -90,12 +90,12 @@ public class DDA {
         System.out.println("dy" + dy);
 
         if(dx == 0) {
-            graphics.verticalLine(x1,x2, y1, y2, color);
+            graphics.verticalLine(x1,x2, y1, y2);
             return;
         }
 
         if(dy == 0) {
-            graphics.horizontalLine(x1, x2, y1, y2, color);
+            graphics.horizontalLine(x1, x2, y1, y2);
             return;
         }
 

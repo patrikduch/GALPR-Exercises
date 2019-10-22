@@ -45,8 +45,8 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         graphic.clear();
 
 
-        DDA dda = new DDA();
-        Square square = new Square();
+        //DDA dda = new DDA();
+        //Square square = new Square();
 
 
         //dda.renderline(350, 190, 250, 290, G_cBlack, graphic);
@@ -54,16 +54,16 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
 
 
 
-        int[] xVertices = new int[]{4,100,4,100};
-        int[] yVertices = new int[] {0, 0, 40, 40};
+        //int[] xVertices = new int[]{4,100,4,100};
+        //int[] yVertices = new int[] {0, 0, 40, 40};
 
 
 
-        square.setVertices(xVertices, yVertices);
-        square.setEdges();
+        //square.setVertices(xVertices, yVertices);
+        //square.setEdges();
 
 
-        square.rasterize(G_cBlack, graphic);
+       // square.rasterize(G_cBlack, graphic);
 
 
         /*
@@ -82,6 +82,39 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         //double b[][]={{1.7,1.4,1.6},{2.5,2.5,2.5},{3.7,3.7,3.7}};
 
         //var resultMatrix = GUtils.matrixMultiplication(a,b);
+
+
+
+        //graphic.dda(0, 45, 120, 45);//horizontal
+        //graphic.dda(45, 0, 45, 120);//vertical
+/*
+        int xs = 0;
+        int ys = 0;
+        for(int y = 560; y >= 0; y -= 20)
+        {
+            System.out.println("y: " + y);
+            graphic.dda(xs, ys, 500, y);
+        }*/
+
+        int [][] arr = {
+                {20, 80, 80, 20},
+                {20, 20, 80, 80},
+        };
+/*
+        int [][] arr = {
+                {20, 80, 80, 20},
+                {20, 20, 120, 120},
+        };*/
+
+        int [][] hArr = {
+                {0, 1},
+                {1, 2},
+                {2, 3},
+                {3, 0}};
+
+        Square sqr = new Square(arr, hArr);
+        graphic.drawSquare(sqr);
+        System.out.println(sqr);
 
 
 

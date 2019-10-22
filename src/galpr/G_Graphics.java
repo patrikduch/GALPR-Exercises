@@ -1,5 +1,7 @@
 package galpr;
 
+import galpr.rasterization.Square;
+
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -40,23 +42,156 @@ public class G_Graphics {
         bitmap.setRGB(x, y, color_help.getRGB());
     }
 
-    public void horizontalLine(int x1, int x2, int y1, int y2, G_Color color ) {
+    /*
+    public void horizontalLine(int x1, int x2, int y1, int y2) {
 
         //putPixel(x1, y1, color);
         for(int i = x1; i<= x2; i++) {
 
-            putPixel(i, y1, color);
+            putPixel(i, y1, G_Color.G_cBlack);
+        }
+    }*/
+
+    public void horizontalLine(int xz, int yz, int xk, int yk)
+    {
+        if(xk < xz)
+        {
+            int tmp = xz;
+            xz = xk;
+            xk = tmp;
+
+            tmp = yz;
+            yz = yk;
+            yk = tmp;
+        }
+
+        for(int i = xz; i <= xk; i++)
+        {
+            putPixel(i, yz, G_Color.G_cBlack);
         }
     }
 
-    public void verticalLine(int x1, int x2, int y1, int y2, G_Color color ) {
+    /*
+    public void verticalLine(int x1, int x2, int y1, int y2) {
 
         //putPixel(x1, y1, color);
         for(int i = y1; i<= y2; i++) {
 
-            putPixel(x1, i, color);
+            putPixel(x1, i, G_Color.G_cBlack);
+        }
+    }*/
+
+    public void verticalLine(int xz, int yz, int xk, int yk)
+    {
+        if(yk < yz)
+        {
+            int tmp = xz;
+            xz = xk;
+            xk = tmp;
+
+            tmp = yz;
+            yz = yk;
+            yk = tmp;
+        }
+
+        for(int i = yz; i <= yk; i++)
+        {
+            putPixel(xz, i, G_Color.G_cBlack);
         }
     }
+
+
+
+
+
+
+    public void drawSquare(Square sqr)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            int sTop = sqr.getHArrValue(0, i);
+            int kTop = sqr.getHArrValue(1, i);
+            int xs = sqr.getArrValue(sTop, 0);
+            int ys = sqr.getArrValue(sTop, 1);
+            int xk = sqr.getArrValue(kTop, 0);
+            int yk = sqr.getArrValue(kTop, 1);
+            //System.out.println("sTop: " + sTop + " kTop: " + kTop);
+
+            dda(xs, ys, xk, yk);
+            //System.out.println("xs: " + xs + " ys: " + ys + " xk: " + xk + " yk: " + yk);
+        }
+    }
+
+    public void dda(int xz, int yz, int xk, int yk) {
+
+        int dx = xk - xz;
+        int dy = yk - yz;
+
+        //System.out.println("dx: " + dx);
+        //System.out.println("dy: " + dy);
+
+        if (dy == 0) {
+            horizontalLine(xz, yz, xk, yk);
+            return;
+        }
+        if (dx == 0) {
+            verticalLine(xz, yz, xk, yk);
+            return;
+        }
+
+        double a = (double) dy / dx;
+        //System.out.println("Smernice: " + a);
+
+
+        //System.out.println("xz: " + xz + " xk: " + xk + " yz: " + yz + " yk: " + yk);
+
+        if (Math.abs(a) <= 1)//1.
+        {
+            if (xk < xz) {
+                int tmp = xz;
+                xz = xk;
+                xk = tmp;
+
+                tmp = yz;
+                yz = yk;
+                yk = tmp;
+            }
+            //System.out.println("xz: " + xz + " xk: " + xk + " yz: " + yz + " yk: " + yk);
+
+            double y = yz;
+            for (int x = xz; x <= xk; x++) {
+                putPixel(x, (int) y, G_Color.G_cBlack);
+                y += a;
+            }
+            return;
+        }
+
+        if (Math.abs(a) > 1)//2.
+        {
+            if (yk < yz) {
+                int tmp = xz;
+                xz = xk;
+                xk = tmp;
+
+                tmp = yz;
+                yz = yk;
+                yk = tmp;
+
+                dx = xk - xz;
+                dy = yk - yz;
+            }
+            a = (double) dx / dy;
+
+            System.out.println("a: " + a);
+            double x = xz;
+            for (int y = yz; y <= yk; y++) {
+                putPixel((int) x, y, G_Color.G_cBlack);
+                x += a;
+            }
+            return;
+        }
+    }
+
 
     /**
      * Vrací barvu pixelu na dané pozici.
