@@ -1,4 +1,4 @@
-package galpr.rasterization;
+package galpr.rasterization.algorithms;
 
 import galpr.G_Color;
 import galpr.G_Graphics;

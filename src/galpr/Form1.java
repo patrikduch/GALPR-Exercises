@@ -1,8 +1,6 @@
 package galpr;
 
-import galpr.rasterization.DDA;
 import galpr.rasterization.shapes.Square;
-import galpr.transformations.GUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,8 +9,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-
-import static galpr.G_Color.G_cBlack;
 
 /**
  * Třída reprezentující okno.

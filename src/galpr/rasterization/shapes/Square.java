@@ -1,6 +1,6 @@
 package galpr.rasterization.shapes;
 import galpr.G_Graphics;
-import galpr.rasterization.DDA;
+import galpr.rasterization.algorithms.DDA;
 
 public class Square {
 
