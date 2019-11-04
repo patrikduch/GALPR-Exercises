@@ -1,7 +1,7 @@
 package galpr;
 
 import galpr.rasterization.DDA;
-import galpr.rasterization.Square;
+import galpr.rasterization.shapes.Square;
 import galpr.transformations.GUtils;
 
 import javax.swing.*;
@@ -49,7 +49,8 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         //Square square = new Square();
 
 
-        //dda.renderline(350, 190, 250, 290, G_cBlack, graphic);
+        //DDA.renderTest(0, 190, 20, 20, graphic);
+
 
 
 
@@ -96,6 +97,8 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
             graphic.dda(xs, ys, 500, y);
         }*/
 
+        /*
+
         int [][] arr = {
                 {20, 80, 80, 20},
                 {20, 20, 80, 80},
@@ -106,6 +109,8 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
                 {20, 20, 120, 120},
         };*/
 
+        /*
+
         int [][] hArr = {
                 {0, 1},
                 {1, 2},
@@ -115,6 +120,28 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         Square sqr = new Square(arr, hArr);
         graphic.drawSquare(sqr);
         System.out.println(sqr);
+        */
+
+        /*
+            Vertices array first row x vertices second row y vertices
+        */
+        int[][] vertices = new int[][] {
+                {20,80,80,20},
+                {20,20,120,120}
+        };
+
+
+        //Square square = new Square(vertices);
+
+        //square.rasterize(graphic);
+
+
+        Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
+        square.render(graphic);
+
+
+
+
 
 
 

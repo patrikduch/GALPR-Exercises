@@ -14,7 +14,7 @@ public class Square
     private int arr[][];//radek = x a y    sloupce = vrcholy
     private int hArray[][];//radek hrany a sloupce = ktere 2 body jsou spojene hranou
 
-    public Square()
+    public Square(int[] ints, int[] ints1)
     {
     }
 
