@@ -1,5 +1,6 @@
 package galpr.rasterization.shapes;
 import galpr.G_Graphics;
+import galpr.rasterization.algorithms.Bresenhamm;
 import galpr.rasterization.algorithms.DDA;
 
 public class Square {
@@ -42,7 +43,19 @@ public class Square {
             var y1 = this.vertices[1][startIndex];
             var y2 = this.vertices[1][endIndex];
 
-            DDA.render(x1, x2, y1, y2, graphics);
+            //DDA.render(x1, x2, y1, y2, graphics);
+            Bresenhamm.render(x1,x2, y1, y2, graphics);
         }
     }
+
+    // Getter for vertices of two dimensional array
+    public int[][] getVertices() {
+        return vertices;
+    }
+
+    // Setter for vertices of two dimensional array
+    public void setVertices(int[][] vertices) {
+        this.vertices = vertices;
+    }
+
 }

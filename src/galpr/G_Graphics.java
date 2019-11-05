@@ -1,7 +1,5 @@
 package galpr;
 
-import galpr.rasterization.Square;
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -105,22 +103,7 @@ public class G_Graphics {
 
 
 
-    public void drawSquare(Square sqr)
-    {
-        for(int i = 0; i < 4; i++)
-        {
-            int sTop = sqr.getHArrValue(0, i);
-            int kTop = sqr.getHArrValue(1, i);
-            int xs = sqr.getArrValue(sTop, 0);
-            int ys = sqr.getArrValue(sTop, 1);
-            int xk = sqr.getArrValue(kTop, 0);
-            int yk = sqr.getArrValue(kTop, 1);
-            //System.out.println("sTop: " + sTop + " kTop: " + kTop);
 
-            dda(xs, ys, xk, yk);
-            //System.out.println("xs: " + xs + " ys: " + ys + " xk: " + xk + " yk: " + yk);
-        }
-    }
 
     public void dda(int xz, int yz, int xk, int yk) {
 

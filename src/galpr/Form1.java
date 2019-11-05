@@ -1,6 +1,9 @@
 package galpr;
 
 import galpr.rasterization.shapes.Square;
+import galpr.rasterization.transformations.Translation;
+import galpr.transformations.GUtils;
+import galpr.transformations.G_Tools;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,84 +43,6 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
     public void G_draw() {
         graphic.clear();
 
-
-        //DDA dda = new DDA();
-        //Square square = new Square();
-
-
-        //DDA.renderTest(0, 190, 20, 20, graphic);
-
-
-
-
-
-        //int[] xVertices = new int[]{4,100,4,100};
-        //int[] yVertices = new int[] {0, 0, 40, 40};
-
-
-
-        //square.setVertices(xVertices, yVertices);
-        //square.setEdges();
-
-
-       // square.rasterize(G_cBlack, graphic);
-
-
-        /*
-
-        double mat[][] = { { 1.4, 2.4, 3.6},
-                { 5.2, 6.3, 7.4},
-                { 9.6, 10.3, 11.5 } };
-
-        double mat2[][] = { { 1.4, 2.4, 3.6 },
-                { 5.2, 6.3, 7.4},
-                { 9.6, 10.3, 11.5  } };
-       */
-
-        //GUtils.isMatrixsEqual(mat, mat2);
-        //double a[][]={{1.2,1.4,1.8},{2.4,2.8,2.3},{3.2,3.4,3.3}};
-        //double b[][]={{1.7,1.4,1.6},{2.5,2.5,2.5},{3.7,3.7,3.7}};
-
-        //var resultMatrix = GUtils.matrixMultiplication(a,b);
-
-
-
-        //graphic.dda(0, 45, 120, 45);//horizontal
-        //graphic.dda(45, 0, 45, 120);//vertical
-/*
-        int xs = 0;
-        int ys = 0;
-        for(int y = 560; y >= 0; y -= 20)
-        {
-            System.out.println("y: " + y);
-            graphic.dda(xs, ys, 500, y);
-        }*/
-
-        /*
-
-        int [][] arr = {
-                {20, 80, 80, 20},
-                {20, 20, 80, 80},
-        };
-/*
-        int [][] arr = {
-                {20, 80, 80, 20},
-                {20, 20, 120, 120},
-        };*/
-
-        /*
-
-        int [][] hArr = {
-                {0, 1},
-                {1, 2},
-                {2, 3},
-                {3, 0}};
-
-        Square sqr = new Square(arr, hArr);
-        graphic.drawSquare(sqr);
-        System.out.println(sqr);
-        */
-
         /*
             Vertices array first row x vertices second row y vertices
         */
@@ -127,12 +52,16 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         };
 
 
-        //Square square = new Square(vertices);
-
-        //square.rasterize(graphic);
-
-
         Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
+
+        square.render(graphic);
+
+        //var result = G_Tools.matrixAddition(new int[][] {{2,0,0,0}, {0,2,0,0}}, square.getVertices());
+
+        var result = Translation.reCalculate(square.getVertices(), 40, 0);
+
+        square.setVertices(result);
+
         square.render(graphic);
 
 
@@ -140,8 +69,11 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
 
 
 
+        //square.setVertices(result);
+        //square.render(graphic);
 
-
+        //Square squaretwo = new Square(new int[] {40,80, 80, 40}, new int[] {40,40, 80, 80});
+        //squaretwo.render(graphic);
 
     }
 

@@ -1,6 +1,9 @@
 DDA algorithm
 https://tomasjanecek.cz/en/clanky/post/trivial-dda-and-bresenham-algorithm-for-a-line-in-java
 
+Nasobení matic
+https://www.javatpoint.com/java-program-to-multiply-two-matrices
+https://www.symbolab.com/solver/matrix-multiply-calculator/%5Cbegin%7Bpmatrix%7D0%262%5C%5C%20%20%20%200%262%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7D20%2660%2660%2620%5C%5C%20%20%20%20%2020%2620%2660%2660%5Cend%7Bpmatrix%7D
 
 
 Dobrý den,
