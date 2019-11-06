@@ -1,5 +1,6 @@
 package galpr;
 
+import galpr.rasterization.algorithms.Bezier;
 import galpr.rasterization.shapes.Square;
 import galpr.rasterization.transformations.Translation;
 import galpr.transformations.GUtils;
@@ -43,29 +44,26 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
     public void G_draw() {
         graphic.clear();
 
-        /*
-            Vertices array first row x vertices second row y vertices
-        */
-        int[][] vertices = new int[][] {
-                {20,80,80,20},
-                {20,20,120,120}
-        };
-
-
+        // Transformations
         Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
-
         square.render(graphic);
 
-        //var result = G_Tools.matrixAddition(new int[][] {{2,0,0,0}, {0,2,0,0}}, square.getVertices());
-
+        // Translation
         var result = Translation.reCalculate(square.getVertices(), 40, 0);
-
         square.setVertices(result);
-
         square.render(graphic);
 
+        // Scalling
+        result = G_Tools.multiplyMatrices(new int[][] {{0,2, 0, 0}, {2,0,0,0}}, result);
+        square.setVertices(result);
+        square.render(graphic);
+
+        // Rotation
 
 
+        Bezier bezier = new Bezier();
+
+        bezier.bezier(graphic);
 
 
 

@@ -1,7 +1,6 @@
 package galpr.rasterization.shapes;
 import galpr.G_Graphics;
 import galpr.rasterization.algorithms.Bresenhamm;
-import galpr.rasterization.algorithms.DDA;
 
 public class Square {
 
