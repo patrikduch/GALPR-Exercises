@@ -1,6 +1,7 @@
 package galpr;
 
 import galpr.rasterization.algorithms.Bezier;
+import galpr.rasterization.algorithms.CohenSutherlandClip;
 import galpr.rasterization.shapes.Square;
 import galpr.rasterization.transformations.Translation;
 import galpr.transformations.GUtils;
@@ -44,6 +45,7 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
     public void G_draw() {
         graphic.clear();
 
+
         // Transformations
         Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
         square.render(graphic);
@@ -67,8 +69,12 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
 
 
 
-        //square.setVertices(result);
-        //square.render(graphic);
+
+        CohenSutherlandClip coh = new CohenSutherlandClip();
+        coh.cohenSutherlandClip(5, 5, 7, 7);
+
+        square.setVertices(result);
+        square.render(graphic);
 
         //Square squaretwo = new Square(new int[] {40,80, 80, 40}, new int[] {40,40, 80, 80});
         //squaretwo.render(graphic);

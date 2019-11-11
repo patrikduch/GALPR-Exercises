@@ -29,3 +29,7 @@ prochází hrany a jednu po druhé vykresluje pomocí algoritmu DDA:
 
 S pozdravem,
 Vojtěch molek
+
+
+
+https://www.geeksforgeeks.org/line-clipping-set-1-cohen-sutherland-algorithm/
