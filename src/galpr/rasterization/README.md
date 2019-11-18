@@ -33,3 +33,9 @@ Vojtěch molek
 
 
 https://www.geeksforgeeks.org/line-clipping-set-1-cohen-sutherland-algorithm/
+
+https://www.geeksforgeeks.org/line-clipping-set-1-cohen-sutherland-algorithm/
+
+https://www.slideshare.net/ManikanthKummarikunt/seed-filling-algorithm
+http://programujte.com/forum/vlakno/30171-seed-fill-vyplnovaci-algoritmus/
+http://2k8618.blogspot.com/2012/01/line-clipping-cohen-sutherland-line.html

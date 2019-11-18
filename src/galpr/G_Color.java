@@ -1,17 +1,61 @@
 package galpr;
 
+import java.util.Objects;
+
 /**
  * Třída reprezentující barvu.
  *
  * @author Pavel Vlašánek
  */
 public class G_Color {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        G_Color g_color = (G_Color) o;
+        return r == g_color.r &&
+                g == g_color.g &&
+                b == g_color.b;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(r, g, b);
+    }
+
+    public static G_Color getG_cBlack() {
+        return G_cBlack;
+    }
+
+    public static void setG_cBlack(G_Color g_cBlack) {
+        G_cBlack = g_cBlack;
+    }
+
+    public static G_Color getG_cWhite() {
+        return G_cWhite;
+    }
+
+    public static void setG_cWhite(G_Color g_cWhite) {
+        G_cWhite = g_cWhite;
+    }
+
+    public static G_Color getG_cRed() {
+        return G_cRed;
+    }
+
+    public static void setG_cRed(G_Color g_cRed) {
+        G_cRed = g_cRed;
+    }
 
     /**
      * Statická proměnná reprezentující černou barvu.
      *
      */
     public static G_Color G_cBlack = new G_Color(0, 0, 0);
+
+    public static G_Color G_cWhite = new G_Color(255, 255, 255);
+
+    public static G_Color G_cRed = new G_Color(255, 0, 0);
 
     /**
      * Červený kanál RGB barvy.
@@ -50,4 +94,5 @@ public class G_Color {
         g = gc;
         b = bc;
     }
+
 }

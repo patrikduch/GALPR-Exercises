@@ -2,6 +2,7 @@ package galpr;
 
 import galpr.rasterization.algorithms.Bezier;
 import galpr.rasterization.algorithms.CohenSutherlandClip;
+import galpr.rasterization.algorithms.SeedFill;
 import galpr.rasterization.shapes.Square;
 import galpr.rasterization.transformations.Translation;
 import galpr.transformations.GUtils;
@@ -45,6 +46,7 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
     public void G_draw() {
         graphic.clear();
 
+        /*
 
         // Transformations
         Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
@@ -70,6 +72,7 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
 
 
 
+
         CohenSutherlandClip coh = new CohenSutherlandClip();
         coh.cohenSutherlandClip(5, 5, 7, 7);
 
@@ -79,12 +82,34 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         //Square squaretwo = new Square(new int[] {40,80, 80, 40}, new int[] {40,40, 80, 80});
         //squaretwo.render(graphic);
 
+        */
+
+        // Porovnat přes equals
+
+
+        //CohenSutherlandClip coh = new CohenSutherlandClip();
+        //coh.cohenSutherlandClip(5, 5, 7, 7);
+
+
+        //coh.cohenSutherlandClip(1, 5, 4, 1);
+
+
+        // Seed fill
+
+
+        Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
+        square.render(graphic);
+
+        SeedFill.fill(40, 40,G_Color.G_cBlack, G_Color.G_cRed, graphic);
+
+
+
     }
 
     /**
      * Kód této metody se provede při stisknutí tlačítka myši (pouze při jeho
      * stisknutí, nikoliv při jeho uvolnění!).
-     *
+     *l
      * @param button Proměnná s informací, které tlačítko myši bylo zmáčknuto
      *               (levé, pravé nebo žádné).
      * @param x      Souřadnice x pozice, na které došlo k zmáčknutí tlačítka myši.
