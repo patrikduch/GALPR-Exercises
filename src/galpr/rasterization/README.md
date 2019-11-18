@@ -39,3 +39,20 @@ https://www.geeksforgeeks.org/line-clipping-set-1-cohen-sutherland-algorithm/
 https://www.slideshare.net/ManikanthKummarikunt/seed-filling-algorithm
 http://programujte.com/forum/vlakno/30171-seed-fill-vyplnovaci-algoritmus/
 http://2k8618.blogspot.com/2012/01/line-clipping-cohen-sutherland-line.html
+
+
+
+Seed fill
+https://cs.stackexchange.com/questions/33140/efficient-flood-filling-seed-filling/54918
+https://www.geeksforgeeks.org/flood-fill-algorithm-using-c-graphics/
+https://jee-appy.blogspot.com/2011/10/flood-fill-program-in-c.html
+https://www.youtube.com/watch?v=MaLASe9Kv6Q&list=PLSl7OLPEBVb_0i9mQAL3btFA8ch5qDMqY
+http://www.codecodex.com/wiki/Implementing_the_flood_fill_algorithm
+https://www.slideshare.net/ManikanthKummarikunt/seed-filling-algorithm
+
+
+Cohen sutherland algoritmus
+
+https://www.geeksforgeeks.org/line-clipping-set-1-cohen-sutherland-algorithm/
+
+https://www.geeksforgeeks.org/line-clipping-set-1-cohen-sutherland-algorithm/

@@ -1,5 +1,8 @@
 package galpr.transformations;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class GUtils {
     static double mat[][] = { { 1.4, 2.4, 3.6, 4.7 },
             { 5.2, 6.3, 7.4, 8.7 },
@@ -17,6 +20,37 @@ public class GUtils {
         // Počet sloupců jedné matice se musí rovnat počtu řádků druhé
         return firstMatrixColumnCount == secondMatrixRowCount;
     }
+
+    static int n = 3;
+
+    // Function that return
+    // dot product of two vector array.
+    public static int dotProduct(int vect_A[], int vect_B[])
+    {
+
+        int product = 0;
+
+        // Loop for calculate cot product
+        for (int i = 0; i < n; i++)
+            product = product + vect_A[i] * vect_B[i];
+        return product;
+    }
+
+    // Function to find
+    // cross product of two vector array.
+    public static void crossProduct(int vect_A[], int vect_B[],
+                             int cross_P[])
+
+    {
+
+        cross_P[0] = vect_A[1] * vect_B[2]
+                - vect_A[2] * vect_B[1];
+        cross_P[1] = vect_A[0] * vect_B[2]
+                - vect_A[2] * vect_B[0];
+        cross_P[2] = vect_A[0] * vect_B[1]
+                - vect_A[1] * vect_B[0];
+    }
+
 
 
     /* Matrix multiplication */

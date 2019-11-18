@@ -95,12 +95,21 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
 
 
         // Seed fill
+        //Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
+        //square.render(graphic);
+
+        //SeedFill.fill(40, 40,G_Color.G_cBlack, G_Color.G_cRed, graphic);
 
 
-        Square square = new Square(new int[] {20,60, 60, 20}, new int[] {20,20, 60, 60});
-        square.render(graphic);
+        //
 
-        SeedFill.fill(40, 40,G_Color.G_cBlack, G_Color.G_cRed, graphic);
+        int cross_P[] = new int [3];
+
+        GUtils.crossProduct(new int[] {1,0,0}, new int[]{0,1,0}, cross_P);
+
+        var dot_P = GUtils.dotProduct(new int[] {1,0,0}, new int[] {0,1,0});
+
+
 
 
 
