@@ -36,6 +36,33 @@ public class GUtils {
         return product;
     }
 
+
+    public static double scalarProduct(int vect_A[], int vect_B[]) {
+
+        int[] result = new int[vect_A.length];
+
+        var test = (vect_A[0] * vect_B[0] + vect_A[1] * vect_B[1] + vect_A[2]* vect_B[2]) / (Math.sqrt(Math.pow(vect_A[0], 2) + Math.pow(vect_A[1], 2))+ Math.pow(vect_A[2], 2))
+                * (Math.sqrt(Math.pow(vect_B[0], 2) + Math.pow(vect_B[1], 2))+ Math.pow(vect_B[2], 2));
+
+
+
+
+
+        return test;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     // Function to find
     // cross product of two vector array.
     public static void crossProduct(int vect_A[], int vect_B[],
