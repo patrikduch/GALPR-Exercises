@@ -3,6 +3,7 @@ package galpr;
 import galpr.rasterization.algorithms.Bezier;
 import galpr.rasterization.algorithms.CohenSutherlandClip;
 import galpr.rasterization.algorithms.SeedFill;
+import galpr.rasterization.shapes.Sphere;
 import galpr.rasterization.shapes.Square;
 import galpr.rasterization.transformations.Translation;
 import galpr.transformations.GUtils;
@@ -111,6 +112,8 @@ public final class Form1 extends javax.swing.JFrame implements G_Controls {
         //System.out.println(dot_P);
 
         //var test = GUtils.scalarProduct(new int[]{1,0,0}, new int[]{0,1,0});
+
+        Sphere.renderWithLight(new int[]{150, 150}, 150, graphic);
 
 
 
