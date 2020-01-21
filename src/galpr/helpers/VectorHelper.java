@@ -9,7 +9,7 @@ public class VectorHelper {
 
         double sqrtv1Res = Math.abs((Math.pow(vect_A[0], 2) + Math.pow(vect_A[1], 2)));
         double sqrtv2Res = Math.abs((Math.pow(vect_B[0], 2) + Math.pow(vect_B[1], 2)));
-        
+
         return (v1Res + v2Res) / Math.sqrt(sqrtv1Res * sqrtv2Res);
 
     }
